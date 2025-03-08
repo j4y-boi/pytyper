@@ -11,3 +11,7 @@ A small [hackertyper](https://hackertyper.net/) knockoff written in Python.
 
 ## Credits
 - j4y_boi
+
+```
+PyTyper is licensed under the GNU 3.0 license.
+```
