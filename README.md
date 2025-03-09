@@ -2,7 +2,19 @@
 A small [hackertyper](https://hackertyper.net/) knockoff written in Python.
 
 ## Playing it
-- Download the repo as a zip
+- Download the repo as a zip  
+- Optionally, make a virtual enviroment in Python first using this command:
+  ```
+  python3 -m venv .env
+  ```
+  And activate the venv using (for linux):
+  ```
+  source .env/bin/activate
+  ```
+  Windows:
+  ```
+  .env/bin/activate
+  ```  
 - Install necesarry libraries using
   ```
   pip install -r requirements.txt
@@ -11,7 +23,7 @@ A small [hackertyper](https://hackertyper.net/) knockoff written in Python.
 
 ## Credits
 - j4y_boi
-- Thanks LemonGravy for testing :)
+- Thanks LemonGravy and liamcharger for testing :)
 
 ```
 PyTyper is licensed under the GNU 3.0 license.
