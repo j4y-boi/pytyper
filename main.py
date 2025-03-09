@@ -8,6 +8,27 @@ from time import sleep as wait
 import readchar
 import os
 
+# This piece of code was adapted from:
+# https://gist.github.com/kgriffs/5726314
+#---------------------------------------------
+if not os.name == "nt":
+    import termios
+    import atexit
+
+    def enable_echo(enable):
+        fd = sys.stdin.fileno()
+        new = termios.tcgetattr(fd)
+        if enable:
+            new[3] |= termios.ECHO
+        else:
+            new[3] &= ~termios.ECHO
+
+        termios.tcsetattr(fd, termios.TCSANOW, new)
+
+    atexit.register(enable_echo, True)
+    enable_echo(False)
+#---------------------------------------------
+
 typedSnippets = 0
 leaving = False
 typedcode = ""
@@ -149,7 +170,7 @@ if __name__ == "__main__":
                 wait(5)
                 clearterminal(True)
                 print(typedcode)
-            elif random.randint(1,1) == 1:
+            elif random.randint(1,20) == 1:
                 printBox(60, "Bypassing passcode...")
                 wait(5)
                 choice = random.randint(1,3)
