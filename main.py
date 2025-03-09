@@ -170,13 +170,14 @@ if __name__ == "__main__":
                             printBox(60, "")
                         wait(1)
                 else:
-                    clearterminal(True)
-                    print("\033[33m",end="")
-                    if i % 2 == 0:
-                        printBox(60, "ERROR: COULDN'T RESOLVE PASS_BYPASS")
-                    else:
-                        printBox(60, "")
-                    wait(1)
+                    for i in range(6):
+                        clearterminal(True)
+                        print("\033[33m",end="")
+                        if i % 2 == 0:
+                            printBox(60, "ERROR: COULDN'T RESOLVE PASS_BYPASS")
+                        else:
+                            printBox(60, "")
+                        wait(1)
             elif random.randint(1,20) == 1:
                 printBox(60, "Resolving hash...")
                 wait(5)
@@ -199,13 +200,14 @@ if __name__ == "__main__":
                             printBox(60, "")
                         wait(1)
                 else:
-                    clearterminal(True)
-                    print("\033[33m",end="")
-                    if i % 2 == 0:
-                        printBox(60, "ERROR: ERROR WHILE RESOLVING")
-                    else:
-                        printBox(60, "")
-                    wait(1)
+                    for i in range(6):
+                        clearterminal(True)
+                        print("\033[33m",end="")
+                        if i % 2 == 0:
+                            printBox(60, "ERROR: ERROR WHILE RESOLVING")
+                        else:
+                            printBox(60, "")
+                        wait(1)
 
                 clearterminal(True)
                 printBox(60, "Continuing...")
