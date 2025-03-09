@@ -98,8 +98,9 @@ def hacker_typer():
         index += 1
         wait(random.uniform(0.005,0.020))
 
-    sys.stdout.write("\n\n")
-    typedcode = typedcode + "\n\n"
+    if not leaving:
+        sys.stdout.write("\n\n")
+        typedcode = typedcode + "\n\n"
 
     typedSnippets += 1
 
