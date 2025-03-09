@@ -96,7 +96,7 @@ def hacker_typer():
         typedcode = typedcode + code[index]
         sys.stdout.flush()
         index += 1
-        wait(random.uniform(0.005,0.020))
+        wait(0.01)
 
     if not leaving:
         sys.stdout.write("\n\n")
