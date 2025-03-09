@@ -23,6 +23,7 @@ A small [hackertyper](https://hackertyper.net/) knockoff written in Python.
 
 ## Credits
 - j4y_boi
+- kgriffs for the [echo code](https://gist.github.com/kgriffs/5726314)
 - Thanks LemonGravy and liamcharger for testing :)
 
 ```
