@@ -177,6 +177,35 @@ if __name__ == "__main__":
                     else:
                         printBox(60, "")
                     wait(1)
+            elif random.randint(1,20) == 1:
+                printBox(60, "Resolving hash...")
+                wait(5)
+                choice = random.randint(1,3)
+                if choice == 1:
+                    for i in range(6):
+                        clearterminal(True)
+                        print("\033[31m",end="")
+                        if i % 2 == 0:
+                            printBox(60, "FAILED: INSUFFICIENT RESOURCES")
+                        else:
+                            printBox(60, "")
+                        wait(1)
+                elif choice == 2:
+                    for i in range(6):
+                        clearterminal(True)
+                        if i % 2 == 0:
+                            printBox(60, f"Success!")
+                        else:
+                            printBox(60, "")
+                        wait(1)
+                else:
+                    clearterminal(True)
+                    print("\033[33m",end="")
+                    if i % 2 == 0:
+                        printBox(60, "ERROR: ERROR WHILE RESOLVING")
+                    else:
+                        printBox(60, "")
+                    wait(1)
 
                 clearterminal(True)
                 printBox(60, "Continuing...")
