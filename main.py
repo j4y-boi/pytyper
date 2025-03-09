@@ -96,7 +96,7 @@ def hacker_typer():
         typedcode = typedcode + code[index]
         sys.stdout.flush()
         index += 1
-        wait(0.01)
+        #wait(0.01)
 
     if not leaving:
         sys.stdout.write("\n\n")
@@ -149,7 +149,7 @@ if __name__ == "__main__":
                 wait(5)
                 clearterminal(True)
                 print(typedcode)
-            elif random.randint(1,20) == 1:
+            elif random.randint(1,1) == 1:
                 printBox(60, "Bypassing passcode...")
                 wait(5)
                 choice = random.randint(1,3)
@@ -179,6 +179,12 @@ if __name__ == "__main__":
                         else:
                             printBox(60, "")
                         wait(1)
+                        
+                clearterminal(True)
+                printBox(60, "Continuing...")
+                wait(5)
+                clearterminal(True)
+                print(typedcode)
             elif random.randint(1,20) == 1:
                 printBox(60, "Resolving hash...")
                 wait(5)
