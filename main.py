@@ -90,11 +90,13 @@ def printBox(lenv:int,*sentences:str):
         print(f"│{r.center(length)}│")
     print(f"└{"─"*length}┘")
 
-def clearterminal(header:bool): #compatibility, am i right
+def clearterminal(header:bool,typed:bool): #compatibility, am i right
     os.system("cls" if os.name == "nt" else "clear")
     sys.stdout.write("\033[32m")
     if header:
         printBox(60,"[H A C K I N G   T E R M I N A L]",f"-\n{chosenSplashscreen}")
+    if typed:
+        print(typedcode,end="")
 
 def hacker_typer():
     global leaving
@@ -107,7 +109,7 @@ def hacker_typer():
     while index < len(code):
         key = readchar.readkey()
         if key == '\x1b':  # esc for exit
-            clearterminal(False)
+            clearterminal(False,False)
             print("[ See ya next time :) ]")
             leaving = True
             break
@@ -128,10 +130,10 @@ def hacker_typer():
 chosenSplashscreen = splashscreenText[random.randint(0,len(splashscreenText)-1)]
 
 if __name__ == "__main__":
-    clearterminal(False)
+    clearterminal(False,False)
     printBox(60,"▀█▀ █▄█ █▀█ █▀▀ █▀█ █▀█ █▄█\n █   █  █▀▀ ██▄ █▀▄ █▀▀  █ \nA hackertyper knockoff by j4y_boi","-","[Press any key to type, press 'ESC' to exit.]","(Go in fullscreen for the FULL experience.)","Press any key to begin.")
     key = readchar.readkey()
-    clearterminal(True)
+    clearterminal(True,False)
     leaving = False
     while not leaving:
         term_x, term_y = os.get_terminal_size().columns, os.get_terminal_size().lines
@@ -142,103 +144,84 @@ if __name__ == "__main__":
                 
                 if newx != oldx or newy != oldy:
                     oldx, oldy = newx, newy
-                    clearterminal(False)
+                    clearterminal(False,False)
                     print("\n" * (newy // 2 - 1))  # Centering
                     print("Your terminal is too small!".center(newx))
                 
                 wait(0.5)  # Avoid overloading the CPU with constant checking
                 term_x, term_y = os.get_terminal_size().columns, os.get_terminal_size().lines
 
-            clearterminal(True)
-            print(typedcode)
+            clearterminal(True,False)
         else:
             hacker_typer()
 
+            if leaving:
+                continue
+
             if typedSnippets % 10 == 0 and typedSnippets != 0:
-                clearterminal(True)
+                clearterminal(True,False)
                 printBox(60, "Processing packets...")
                 wait(5)
                 for i in range(6):
-                    clearterminal(True)
+                    clearterminal(True,False)
                     if i % 2 == 0:
                         printBox(60, f"Processed units: {typedSnippets}")
                     else:
                         printBox(60, "")
                     wait(1)
-                clearterminal(True)
+                clearterminal(True,False)
                 printBox(60, "Continuing...")
                 wait(5)
-                clearterminal(True)
-                print(typedcode)
+                clearterminal(True,True)
             elif random.randint(1,20) == 1:
                 printBox(60, "Bypassing passcode...")
                 wait(5)
                 choice = random.randint(1,3)
-                if choice == 1:
-                    for i in range(6):
-                        clearterminal(True)
+                for i in range(6):
+                    clearterminal(True,True)
+                    if choice == 1:
                         print("\033[31m",end="")
-                        if i % 2 == 0:
-                            printBox(60, "Access Denied")
-                        else:
-                            printBox(60, "")
-                        wait(1)
-                elif choice == 2:
-                    for i in range(6):
-                        clearterminal(True)
-                        if i % 2 == 0:
-                            printBox(60, f"Access Granted")
-                        else:
-                            printBox(60, "")
-                        wait(1)
-                else:
-                    for i in range(6):
-                        clearterminal(True)
+                    elif choice == 3:
                         print("\033[33m",end="")
-                        if i % 2 == 0:
+                    
+                    if i % 2 == 0:
+                        if choice == 1:
+                            printBox(60, "Access Denied")
+                        elif choice == 2:
+                            printBox(60, f"Access Granted")
+                        elif choice == 3:
                             printBox(60, "ERROR: COULDN'T RESOLVE PASS_BYPASS")
-                        else:
-                            printBox(60, "")
-                        wait(1)
-                        
-                clearterminal(True)
+                    else:
+                        printBox(60, "")
+                    wait(1)
+
+                clearterminal(True,True)
                 printBox(60, "Continuing...")
                 wait(5)
-                clearterminal(True)
-                print(typedcode)
+                clearterminal(True,True)
             elif random.randint(1,20) == 1:
                 printBox(60, "Resolving hash...")
                 wait(5)
                 choice = random.randint(1,3)
-                if choice == 1:
-                    for i in range(6):
-                        clearterminal(True)
+                for i in range(6):
+                    clearterminal(True,True)
+                    if choice == 1:
                         print("\033[31m",end="")
-                        if i % 2 == 0:
-                            printBox(60, "FAILED: INSUFFICIENT RESOURCES")
-                        else:
-                            printBox(60, "")
-                        wait(1)
-                elif choice == 2:
-                    for i in range(6):
-                        clearterminal(True)
-                        if i % 2 == 0:
-                            printBox(60, f"Success!")
-                        else:
-                            printBox(60, "")
-                        wait(1)
-                else:
-                    for i in range(6):
-                        clearterminal(True)
+                    elif choice == 3:
                         print("\033[33m",end="")
-                        if i % 2 == 0:
+                    
+                    if i % 2 == 0:
+                        if choice == 1:
+                            printBox(60, "FAILED: INSUFFICIENT RESOURCES")
+                        elif choice == 2:
+                            printBox(60, f"Success!")
+                        elif choice == 3:
                             printBox(60, "ERROR: ERROR WHILE RESOLVING")
-                        else:
-                            printBox(60, "")
-                        wait(1)
+                    else:
+                        printBox(60, "")
+                    wait(1)
 
-                clearterminal(True)
+                clearterminal(True,True)
                 printBox(60, "Continuing...")
                 wait(5)
-                clearterminal(True)
-                print(typedcode)
+                clearterminal(True,True)
