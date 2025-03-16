@@ -53,7 +53,7 @@ splashscreenText = [
     "bypassing the firewall??? :0",
 ]
 
-snippets = [ #most of these were ai generated, sorry :c
+snippets = [
     "----\nimport os\nimport sys\nimport random\nimport socket\nimport struct\nimport hashlib\n\n"
     "def breach_mainframe():\n    mainframe_ip = '198.51.100.14'\n    session_key = hashlib.md5(mainframe_ip.encode()).hexdigest()\n    exploit_code = os.urandom(16).hex()\n    checksum = hashlib.sha256(exploit_code.encode()).hexdigest()\n    return f'[+] Injecting zero-day exploit {exploit_code} into {mainframe_ip} with session {session_key} (checksum: {checksum})'",
     "class Exploit:\n    def __init__(self, target):\n        self.target = target\n    def attack(self):\n        payload = os.urandom(32).hex()\n        response_code = random.choice([200, 403, 500])\n        payload_signature = hashlib.md5(payload.encode()).hexdigest()\n        return f'[+] Sent crafted payload {payload} (sig: {payload_signature}) to {self.target}, response: {response_code}'",
@@ -62,7 +62,7 @@ snippets = [ #most of these were ai generated, sorry :c
     "def backdoor():\n    key = hashlib.sha512(str(random.randint(100000, 999999)).encode()).hexdigest()\n    session_id = os.urandom(8).hex()\n    return f'Access key: {key[:16]} (session: {session_id})'",
     "class Virus:\n    def __init__(self):\n        self.payload = 'rm -rf / --no-preserve-root'\n    def execute(self):\n        checksum = hashlib.md5(self.payload.encode()).hexdigest()\n        encoded_payload = self.payload.encode('utf-8').hex()\n        return f'[+] Payload checksum: {checksum}, encoded: {encoded_payload}, executing...'",
     "def spoof_ip():\n    return f'192.168.1.{random.randint(2, 254)}'",
-    "def deep_web_access():\n    nodes = random.randint(50, 200)\n    session_key = os.urandom(16).hex()\n    return f'Connected to {nodes} Tor nodes. Session key: {session_key}. Welcome to the shadows.'",
+    "def deep_web_access():\n    nodes = random.randint(50, 200)\n    session_key = os.urandom(16).hex()\n    return f'Connected to {nodes} Tor nodes. Session key: {session_key}.'",
     "def bypass_firewall():\n    proxy_chain = [f'proxy-{random.randint(1000, 9999)}' for _ in range(5)]\n    tunnel_id = hashlib.md5(''.join(proxy_chain).encode()).hexdigest()\n    return f'[+] Routing traffic through: {' -> '.join(proxy_chain)} (Tunnel ID: {tunnel_id[:12]})'",
     "def inject_sql():\n    query = 'SELECT * FROM users WHERE username = \'admin\' AND password = \' OR \'1\'=\"1\" --\''\n    query_hash = hashlib.sha1(query.encode()).hexdigest()\n    return f'[+] Executing SQL Injection: {query} (Query Hash: {query_hash})'",
     "def scramble_logs():\n    log_files = ['/var/log/auth.log', '/var/log/syslog', '/var/log/nginx/access.log']\n    scrambled_hashes = {log: hashlib.md5(log.encode()).hexdigest() for log in log_files}\n    operation_id = os.urandom(8).hex()\n    return f'[+] Logs overwritten with hashes: {scrambled_hashes} (Operation ID: {operation_id})'",
