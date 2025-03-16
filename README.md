@@ -2,7 +2,11 @@
 A small [hackertyper](https://hackertyper.net/) knockoff written in Python.
 
 ## Playing it
-- Download the repo as a zip  
+- Download the repo as a zip, or clone it using
+  ```
+  git clone https://github.com/j4y-boi/pytyper
+  cd PyTyper
+  ```
 - Optionally, make a virtual enviroment in Python first using this command:
   ```
   python3 -m venv .env
